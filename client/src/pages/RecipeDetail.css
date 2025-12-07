@@ -1,0 +1,417 @@
+/**
+ * RecipeDetail Page Styles
+ * CS 409 Web Programming - UIUC Final Project
+ */
+
+.recipe-detail {
+  padding: var(--space-xl) 0 var(--space-3xl);
+}
+
+/* Back link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-bottom: var(--space-xl);
+  padding: var(--space-sm) 0;
+  transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+}
+
+.back-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.back-link:hover svg {
+  transform: translateX(-4px);
+}
+
+/* Recipe Header */
+.recipe-header {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.recipe-header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recipe-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin-bottom: var(--space-lg);
+}
+
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.meta-item.highlight {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.meta-icon {
+  font-size: 1rem;
+}
+
+/* Diet tags */
+.diet-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.diet-tag {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+/* Favorite button */
+.favorite-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  align-self: flex-start;
+}
+
+.favorite-button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.favorite-button.favorited {
+  background: var(--color-error-bg);
+  border-color: transparent;
+  color: var(--color-error);
+}
+
+.favorite-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading-spinner-small {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Header image */
+.recipe-header-image {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.recipe-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: linear-gradient(135deg, var(--color-bg-warm) 0%, var(--color-border-light) 100%);
+}
+
+/* Main content */
+.recipe-content {
+  max-width: 900px;
+}
+
+.recipe-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.recipe-section h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+}
+
+.section-icon {
+  font-size: 1.25rem;
+}
+
+/* Summary */
+.recipe-summary {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+/* Two column layout */
+.recipe-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+}
+
+/* Ingredients */
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  transition: background var(--transition-fast);
+}
+
+.ingredient-item:hover {
+  background: var(--color-border-light);
+}
+
+.ingredient-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: white;
+}
+
+.ingredient-text {
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+/* Nutrition */
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.nutrition-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-md);
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.nutrition-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  font-family: var(--font-display);
+}
+
+.nutrition-label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.nutrition-daily {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+/* Instructions */
+.instructions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step;
+}
+
+.instruction-step {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-md);
+}
+
+.instruction-step:hover {
+  border-color: var(--color-border);
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50%;
+}
+
+.step-content {
+  flex: 1;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  padding-top: var(--space-xs);
+}
+
+.instructions-text {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.no-instructions {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.no-instructions a {
+  color: var(--color-primary);
+}
+
+/* Source link */
+.recipe-source {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  background: var(--color-bg-warm);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-lg);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.source-link:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Error/Loading states */
+.recipe-detail .loading-state,
+.recipe-detail .error-state {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+.emoji-large {
+  font-size: 4rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .recipe-header {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-header-image {
+    order: -1;
+  }
+
+  .recipe-title {
+    font-size: 2rem;
+  }
+
+  .recipe-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .recipe-title {
+    font-size: 1.5rem;
+  }
+
+  .recipe-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nutrition-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instruction-step {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .step-number {
+    align-self: flex-start;
+  }
+}
+

@@ -1,0 +1,266 @@
+/**
+ * SavedRecipes Page Styles
+ * CS 409 Web Programming - UIUC Final Project
+ */
+
+.saved-recipes {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.title-icon {
+  font-size: 2rem;
+}
+
+.page-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Favorites count */
+.favorites-count {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+/* Favorites Grid */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* Favorite Card */
+.favorite-card {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.favorite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.favorite-card-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Favorite Image */
+.favorite-image {
+  width: 140px;
+  min-height: 140px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--color-bg-warm);
+}
+
+.favorite-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.favorite-card:hover .favorite-image img {
+  transform: scale(1.05);
+}
+
+.favorite-image .image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+/* Favorite Content */
+.favorite-content {
+  flex: 1;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.favorite-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.favorite-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.favorite-meta .meta-item {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.favorite-meta .meta-item.highlight {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+/* Remove Button */
+.remove-button {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.favorite-card:hover .remove-button {
+  opacity: 1;
+}
+
+.remove-button:hover {
+  background: var(--color-error);
+  color: white;
+  transform: scale(1.1);
+}
+
+.remove-button:disabled {
+  cursor: not-allowed;
+}
+
+.remove-button .loading-spinner-small {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Empty State */
+.saved-recipes .empty-state {
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl);
+  max-width: 500px;
+  margin: var(--space-2xl) auto;
+}
+
+.empty-illustration {
+  margin-bottom: var(--space-lg);
+}
+
+.emoji-large {
+  font-size: 4rem;
+}
+
+.saved-recipes .empty-state h3 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.saved-recipes .empty-state p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+/* Loading/Error States */
+.saved-recipes .loading-state,
+.saved-recipes .error-state {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+.saved-recipes .error-state h2 {
+  color: var(--color-text);
+  margin: 0;
+}
+
+.saved-recipes .error-state p {
+  color: var(--color-text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .favorite-card-link {
+    flex-direction: column;
+  }
+
+  .favorite-image {
+    width: 100%;
+    height: 180px;
+    min-height: auto;
+  }
+
+  .remove-button {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .favorite-meta {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+}
+

@@ -1,0 +1,272 @@
+/**
+ * Dashboard Page Styles
+ * CS 409 Web Programming - UIUC Final Project
+ */
+
+.dashboard {
+  padding-bottom: var(--space-3xl);
+}
+
+/* Search Section */
+.search-section {
+  background: linear-gradient(180deg, var(--color-bg-warm) 0%, var(--color-bg) 100%);
+  margin: 0 calc(-1 * var(--space-md));
+  padding: 0 var(--space-md);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* Main Content Layout */
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-2xl);
+  margin-top: var(--space-2xl);
+}
+
+/* Filters Sidebar */
+.filters-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.apply-filters-btn {
+  width: 100%;
+}
+
+/* Ranking Info */
+.ranking-info {
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border-light);
+}
+
+.ranking-info h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.ranking-info ol {
+  list-style: none;
+  counter-reset: ranking;
+  margin: 0;
+  padding: 0;
+}
+
+.ranking-info li {
+  counter-increment: ranking;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  position: relative;
+  padding-left: var(--space-xl);
+}
+
+.ranking-info li:last-child {
+  border-bottom: none;
+}
+
+.ranking-info li::before {
+  content: counter(ranking);
+  position: absolute;
+  left: 0;
+  top: var(--space-sm);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.ranking-info li strong {
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.ranking-info li span {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Results Section */
+.results-section {
+  min-height: 400px;
+}
+
+.results-header {
+  margin-bottom: var(--space-xl);
+}
+
+.results-header h2 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.results-summary {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Recipe Grid */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* Loading State */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: var(--space-md);
+}
+
+.loading-state p {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+/* Error State */
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+.error-state .error-icon {
+  font-size: 3rem;
+}
+
+.error-state h3 {
+  color: var(--color-text);
+  margin: 0;
+}
+
+.error-state p {
+  color: var(--color-text-secondary);
+  max-width: 400px;
+  margin: 0;
+}
+
+/* Empty/Welcome State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  padding: var(--space-2xl);
+}
+
+.emoji-large {
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.empty-state p {
+  color: var(--color-text-secondary);
+  max-width: 450px;
+  line-height: 1.6;
+}
+
+/* Welcome State Features */
+.welcome-state .welcome-illustration {
+  margin-bottom: var(--space-md);
+}
+
+.feature-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.feature-icon {
+  font-size: 1rem;
+}
+
+/* No Results State */
+.no-results-state {
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-xl);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-content {
+    grid-template-columns: 260px 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-sidebar {
+    order: 2;
+  }
+
+  .results-section {
+    order: 1;
+  }
+
+  .recipe-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .ranking-info {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-highlights {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

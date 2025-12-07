@@ -1,0 +1,29 @@
+{
+  "name": "recipeasy",
+  "version": "1.0.0",
+  "description": "ReciPeasy - Smart Recipe Finder | CS 409 Final Project",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "start": "cd server && npm start",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [
+    "recipe",
+    "cooking",
+    "ingredients",
+    "nutrition",
+    "react",
+    "express",
+    "mongodb"
+  ],
+  "author": "CS 409 Student",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+
