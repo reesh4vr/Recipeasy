@@ -1,6 +1,4 @@
-// client/src/services/api.js
-// Centralized API client for ReciPeasy
-// Falls back to /api (Vite proxy) but can be overridden via VITE_API_BASE_URL
+
 
 import axios from 'axios'
 

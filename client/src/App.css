@@ -1,14 +1,8 @@
-/**
- * ReciPeasy - App-specific Styles
- * CS 409 Web Programming - UIUC Final Project
- */
 
-/* Page-level animations */
 .page {
   animation: fadeIn var(--transition-base) ease-out;
 }
 
-/* Error messages */
 .error-message {
   display: flex;
   align-items: center;
@@ -24,7 +18,6 @@
   flex-shrink: 0;
 }
 
-/* Success messages */
 .success-message {
   display: flex;
   align-items: center;
@@ -36,7 +29,6 @@
   font-weight: 500;
 }
 
-/* Empty state */
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -62,7 +54,6 @@
   max-width: 400px;
 }
 
-/* Skeleton loading */
 .skeleton {
   background: linear-gradient(
     90deg,
@@ -98,7 +89,6 @@
   width: 60%;
 }
 
-/* Tooltip */
 .tooltip {
   position: relative;
 }
@@ -127,7 +117,6 @@
   transform: translateX(-50%) translateY(-4px);
 }
 
-/* Grid layouts */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -167,7 +156,6 @@
   }
 }
 
-/* Section headers */
 .section-header {
   display: flex;
   align-items: center;
@@ -181,7 +169,6 @@
   gap: var(--space-sm);
 }
 
-/* Tag list */
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -217,14 +204,12 @@
   color: white;
 }
 
-/* Divider */
 .divider {
   height: 1px;
   background: var(--color-border);
   margin: var(--space-xl) 0;
 }
 
-/* Stats/metrics display */
 .stats-row {
   display: flex;
   gap: var(--space-lg);
@@ -251,7 +236,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Ingredient list */
 .ingredient-list {
   list-style: none;
 }
@@ -296,7 +280,6 @@
   color: var(--color-text-muted);
 }
 
-/* Nutrition display */
 .nutrition-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -325,7 +308,6 @@
   text-transform: uppercase;
 }
 
-/* Instructions list */
 .instructions-list {
   counter-reset: step;
   list-style: none;
@@ -363,7 +345,6 @@
   line-height: 1.7;
 }
 
-/* Back link */
 .back-link {
   display: inline-flex;
   align-items: center;
